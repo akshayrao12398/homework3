@@ -1,0 +1,17 @@
+<h1>My Places</h1>
+
+<% if @places.present? %>
+  <ul>
+    <% @places.each do |place| %>
+      <li>
+        <%= link_to place.name, place_path(place) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No places added yet!</p>
+<% end %>
+
+<p>
+  <%= link_to "Add a New Place", new_place_path %>
+</p>
